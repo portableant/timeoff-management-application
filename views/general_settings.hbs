@@ -8,18 +8,15 @@
 
 {{> show_flash_messages }}
 
-<div class="row">&nbsp;</div>
 
-<div class="row">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
   <div class="col-md-12">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        Company
-      </div>
+
       <div class="panel-body">
         <div class="row">
 
-          <div class="col-md-5">
+          <div class="col-md-6">
             <form class="form-horizontal" method="POST" action="/settings/company/" id="company_edit_form">
               <div class="form-group">
                 <label for="input_company_name" class="col-md-4 control-label">Company name</label>
@@ -126,9 +123,8 @@
           <div class="col-md-offset-1 col-md-5">
 
             <div class="form-horizontal">
-              <div class="form-group">
-                <label for="" class="col-md-7 control-label">Backup employees' leave data</label>
-              </div>
+              <h3>Backup employees' leave data</h3>
+
               <div class="form-group">
                 <div class="col-md-offset-2">
                   <em>Download the full list of employees with all their leave requests. The file is in <strong>.CSV</strong> format which is compatible with MS Excel.</em>
@@ -188,13 +184,13 @@
 </div>
 
 
-<div class="row">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
 
   <div class="col-md-7">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <h3>
         Leave Types
-      </div>
+      </h3>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-6">
@@ -207,7 +203,7 @@
           </div>
         </div>
 
-        <div class="row">&nbsp;</div>
+
 
         <form id="delete_leavetype_form" method="post" action="/settings/leavetypes/delete/"></form>
         <form id="leave_type_edit_form" method="post" action="/settings/leavetypes/">
@@ -224,9 +220,9 @@
 
             <div class="input-group">
               <span class="input-group-addon">
-                <input type="radio" name="first_record" value="{{ this.id }}" {{# if this.sort_order }}checked="checked"{{/ if}}>
+                <input type="radio" class="mr-2 " name="first_record" value="{{ this.id }}" {{# if this.sort_order }}checked="checked"{{/ if}}>
               </span>
-              <input type="text" class="form-control" name="name__{{ this.id }}" value="{{name}}" data-tom-leave-type-order="name_{{@index}}">
+              <input type="text" class="form-control mr-2 mb-2" name="name__{{ this.id }}" value="{{name}}" data-tom-leave-type-order="name_{{@index}}">
 
               <div class="input-group-btn" data-tom-color-picker="1" data-tom-leave-type-order="colour__{{@index}}">
                 <input type="hidden" name="color__{{ this.id }}" value="{{# with this }}{{ this.get_color_class }}{{/with}}">
@@ -255,17 +251,17 @@
           </div>
         </div>
 
-        <div class="row">&nbsp;</div>
+
 
         {{/each}}
 
-        <div class="row">&nbsp;</div>
+
 
         <div class="row">
           <div class="col-md-12">
-            <div class="pull-right">
-              <button class="btn btn-default" data-toggle="modal" data-target="#add_new_leave_type_modal" type="button" id="add_new_leave_type_btn">Add new</button>
-              <button type="submit" class="btn btn-success">Save changes</button>
+            <div >
+              <button class="btn btn-dark mt-2" data-toggle="modal" data-target="#add_new_leave_type_modal" type="button" id="add_new_leave_type_btn">Add new</button>
+              <button type="submit" class="btn mt-2 btn-success">Save changes</button>
             </div>
           </div>
         </div>
@@ -273,12 +269,14 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="col-md-5 setting-general-2nd-column">
+  <div class="row col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <h2>
         Bank Holidays
-      </div>
+      </h2>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12 tst-no-bank-holidays">Bank holidays could be found <a href="/settings/bankholidays/">here</a></div>
@@ -287,16 +285,14 @@
     </div>
   </div>
 
-</div>
 
 
-
-<div class="row">
+<div class=" col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
   <div class="col-md-12">
     <div class="panel panel-danger">
-      <div class="panel-heading">
+      <h1>
         <i class="fa fa-bomb"></i> Danger zone
-      </div>
+      </h1>
       <div class="panel-body">
 
           <div class="col-md-12">

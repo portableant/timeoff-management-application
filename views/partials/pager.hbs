@@ -15,35 +15,32 @@
     * pages     : simple array with item for each page, each item is corresponding page number
 
 --}}
-
-<ul class="pagination">
-  <li {{# unless pager.page_prev }} class="disabled" {{/unless}}>
-      <span>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+  <li {{# unless pager.page_prev }} class="disabled page-item" {{/unless}}>
         {{#if pager.page_prev}}
-        <a href="?{{#each pager.filter }}{{@key}}={{this}}&{{/each}}page={{pager.page_prev}}">&laquo; Prev</a>
+        <a class="page-link" href="?{{#each pager.filter }}{{@key}}={{this}}&{{/each}}page={{pager.page_prev}}">&laquo; Prev</a>
         {{else}}
         &laquo; Prev
         {{/if}}
-      </span>
   </li>
   {{# each pager.pages }}
 
     {{# if_equal this ../pager.page }}
-      <li>
-        <span><a href="?{{#each ../pager.filter }}{{@key}}={{this}}&{{/each}}page={{this}}">{{ this }} of {{ ../pager.page_qnty }}</a></span>
+      <li class="page-item">
+        <a class="page-link" href="?{{#each ../pager.filter }}{{@key}}={{this}}&{{/each}}page={{this}}">{{ this }} of {{ ../pager.page_qnty }}</a>
       </li>
     {{/ if_equal}}
 
   {{/ each}}
-  <li{{# unless pager.page_next }} class="disabled" {{/unless}}>
-    <span>
+  <li{{# unless pager.page_next }} class="disabled page-item" {{/unless}}>
 
         {{#if pager.page_next}}
-        <a href="?{{#each pager.filter }}{{@key}}={{this}}&{{/each}}page={{pager.page_next}}">Next &raquo;</a>
+        <a class="page-link" href="?{{#each pager.filter }}{{@key}}={{this}}&{{/each}}page={{pager.page_next}}">Next &raquo;</a>
         {{else}}
         Next &raquo;
         {{/if}}
 
-    </span>
   </li>
 </ul>
+</nav>

@@ -1,12 +1,10 @@
 
 <form method="POST" action="/settings/departments/edit/{{ department.id }}/" id="department_edit_form">
 
-<div class="col-md-7">
+<div class="col-md-12">
 
-  <ol class="breadcrumb">
-    <li><a href="/settings/departments/" data-vpp-all-departments-link="1">All departments</a></li>
-    <li class="active">{{ department.name }}</li>
-  </ol>
+
+
 
   <div class="form-group">
     <label for="name" class="control-label">Name</label>
@@ -21,7 +19,7 @@
       <option value="{{this.id}}" {{#if_equal ../department.bossId this.id }} selected="selected"{{/if_equal}}>{{this.full_name}}</option>
     {{/each}}
     </select>
-    <span class="help-block">Head of {{department.name}} department. Main manager. <a href="/users/edit/{{department.bossId}}/">More details <i class="fa fa-angle-double-right"></i></a></span>
+    <span class="help-block text-danger">Head of {{department.name}} department. Main manager.<br/> <a href="/users/edit/{{department.bossId}}/" class="btn btn-dark mt-2">More details <i class="fa fa-angle-double-right"></i></a></span>
   </div>
 
   <div class="form-group">
@@ -36,7 +34,7 @@
 
       <li class="list-group-item">
         <span>&nbsp;
-        <a class="pull-right btn btn-link btn-xs"
+        <a class="pull-right btn btn-dark btn-xs"
           data-vpp-add-new-secondary-supervisor="1"
           data-toggle="modal"
           data-target="#add_secondary_supervisers_modal"
@@ -48,7 +46,7 @@
         <span>
       </li>
     </ul>
-    <span class="help-block">List of users who also could decide on leave requests from {{department.name}} department's employees.</span>
+    <span class="help-block text-danger">List of users who also could decide on leave requests from {{department.name}} department's employees.</span>
   </div>
 
 
@@ -67,7 +65,8 @@
       <input class="" id="use_bank_holidays_inp" name="include_public_holidays" type="checkbox" {{# if department.include_public_holidays}} checked="checked"  {{/if}} >
       Include public holidays
     </label>
-    <span class="help-block">Determine if employees from {{department.name}} have <a href="/settings/general"/>bank holidays</a> in addition to their allowance</span>
+    <br/>
+    <span class="help-block text-danger">Determine if employees from {{department.name}} have <a href="/settings/general"/>bank holidays</a> in addition to their allowance</span>
   </div>
 
   <div class="form-group">
@@ -75,14 +74,15 @@
       <input class="" id="is_accrued_allowance_inp" name="is_accrued_allowance" type="checkbox" {{# if department.is_accrued_allowance}} checked="checked" {{/if}} >
       Accrued allowance
     </label>
-    <span class="help-block">If enabled, holiday allowance starts to build up - or accrue - from the first day of employment. It accrues in proportion to the annual entitlement. E.g. an employee in the ninth month of employment would have built up 9/12ths (or three-quarters) of annual entitlement.</span>
+    <br />
+    <span class="help-block text-danger">If enabled, holiday allowance starts to build up - or accrue - from the first day of employment. It accrues in proportion to the annual entitlement. E.g. an employee in the ninth month of employment would have built up 9/12ths (or three-quarters) of annual entitlement.</span>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <button id="save_changes_btn" type="submit" class="btn btn-success pull-right">Save changes to department</button>
-    <a class="btn btn-link pull-right" href="/settings/departments/">Cancel</a>
+    <a class="btn btn-dark" href="/settings/departments/">Cancel</a>
   </div>
 </div>
 

@@ -82,11 +82,12 @@ app.use(function(req,res,next){
 
 app.use(function(req,res,next){
     res.locals.custom_java_script = [
-      '/js/bootstrap-datepicker.js',
+    //  '/js/bootstrap-datepicker.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js',
       '/js/global.js'
     ];
     res.locals.custom_css = [
-      '/css/bootstrap-datepicker3.standalone.css'
+      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css'
     ];
 
     next();

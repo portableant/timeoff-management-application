@@ -1,17 +1,17 @@
 {
   "allow_create_new_accounts" : true,
-  "send_emails"              : false,
+  "send_emails"              : true,
   "application_sender_email" : "email@test.com",
   "email_transporter" : {
-    "host" : "localhost",
-    "port" : 25,
+    "host" : "email-smtp.eu-west-2.amazonaws.com",
+    "port" : 587,
     "auth" : {
-      "user" : "user",
-      "pass" : "pass"
+      "user" : "AKIAVGYRDIOOHMCJUYCZ",
+      "pass" : "BH4/Euh9OPVT8Hst5SaOubu8LJJ4KsPBEICJ0HLsQ3wq"
     }
   },
   "ga_analytics_on" : false,
-  "crypto_secret" : "!2~`HswpPPLa22+=±§sdq qwe,appp qwwokDF_",
-  "application_domain" : "http://app.timeoff.management",
-  "promotion_website_domain" : "http://timeoff.management"
+  "crypto_secret" : "!2~`HswpPPLa22+=±§sdq qwe,appp qwwokDF_99s9sosjsjsgdksbvgdldhshsh",
+  "application_domain" : "http://annual-leave.fitz.ms",
+  "promotion_website_domain" : "https://github.com/fitzwilliammuseum"
 }

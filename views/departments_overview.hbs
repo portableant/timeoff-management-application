@@ -5,24 +5,20 @@
 
 {{> show_flash_messages }}
 
-<div class="row">
-  <div class="col-md-4 lead">All departments</div>
-  <div class="col-md-4 col-md-offset-4">
-    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Add new department</button>
-  </div>
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
+    <button class="btn btn-info d-block" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Add a new department</button>
 </div>
 
 
-<div class="row">&nbsp;</div>
 
 
 {{# unless departments.length }}
-<div class="row">
-    <div class="col-md-4">No department records</div>
+<div class="row col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
+    <p>No department records</p>
 </div>
 {{/unless}}
 
-<div class="row">
+<div class="row col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
 
   <div class="col-md-12">
     <table class="table table-hover">

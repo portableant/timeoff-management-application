@@ -5,15 +5,15 @@
 
 {{> show_flash_messages }}
 
-<div class="row">
-  <div class="col-md-6 lead">All emails ever been sent by the system</div>
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
+  <p>All emails that have ever been sent by the system</p>
 </div>
 
-<div class="row">&nbsp;</div>
 
-<div class="row">
+
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 bg-white">
   <div class="content">
-    <div class="col-md-3">
+    <div class="col-md-6">
       <table class="table table-hover all-departments">
         <thead>
           <tr>
@@ -26,14 +26,14 @@
               <div class="form-group input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="text" name="start_date" class="form-control" id="start_date" placeholder="Start Date"
-                  data-provide="datepicker" data-date-autoclose="1" data-date-format="{{#with logged_user.company }}{{this.get_default_date_format_for_date_picker}}{{/with}}" data-date-week-start="1"
+                  data-provide="datepicker" data-date-autoclose="1" data-date-format="{{#with logged_user.company }}{{this.get_btn-dark_date_format_for_date_picker}}{{/with}}" data-date-week-start="1"
                   value="{{#if filter.start_date }}{{as_date filter.start_date }}{{/if}}"
                 >
               </div>
               <div class="form-group input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="text" name="end_date" class="form-control" id="end_date" placeholder="End Date"
-                  data-provide="datepicker" data-date-autoclose="1" data-date-format="{{#with logged_user.company }}{{this.get_default_date_format_for_date_picker}}{{/with}}" data-date-week-start="1"
+                  data-provide="datepicker" data-date-autoclose="1" data-date-format="{{#with logged_user.company }}{{this.get_btn-dark_date_format_for_date_picker}}{{/with}}" data-date-week-start="1"
                   value="{{#if filter.end_date }}{{as_date filter.end_date }}{{/if}}"
                 >
               </div>
@@ -48,7 +48,7 @@
 
               <button type="submit" class="btn btn-info">Filter</button>
               {{# if show_reset_button }}
-              <a href="/audit/email/" class="btn btn-default">Reset</a>
+              <a href="/audit/email/" class="btn btn-dark">Reset</a>
               {{/if}}
             </form>
           </td></tr>
@@ -56,8 +56,8 @@
       </table>
     </div>
 
-    <div class="col-md-9">
-      <table class="table table-hover" id="email_list">
+    <div class="col-md-12">
+      <table class="table table-hover table-striped" id="email_list">
         <thead>
           <tr>
             <th>To Employee</th>
@@ -97,7 +97,7 @@
         </tbody>
       </table>
 
-      <div class="text-center">
+      <div >
         {{# if audit_emails}}
           {{> pager pager=pager }}
         {{/if}}
@@ -108,6 +108,6 @@
   </div>
 </div>
 
-<div class="row">&nbsp;</div>
+
 
 {{> footer }}
